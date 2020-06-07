@@ -1,0 +1,75 @@
+---
+title: "project_rep"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{project_rep}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup }
+knitr::opts_chunk$set(
+	message = FALSE,
+	warning = FALSE,
+	include = FALSE
+)
+library(blblm)
+#library(devtools)
+#load_all()
+```
+
+STA141C
+Spring 2020
+Final project
+Hint: consider using cache = TRUE in the R code if you want to make knitting faster.kkkkkkfvooooooooooqqqqqqqqqqqqqqq
+```
+{r echo=TRUE}
+library(nycflights13)
+flights1<-flights[1:2000,]
+f1<-function(){blblm(arr_delay ~ distance + dep_delay, data = flights1, m = 4, B = 200)
+  return (0)}
+f2<-function(){blblm1(arr_delay ~ distance + dep_delay, data = flights1, m = 4, B = 200)
+  return (0)}
+result<-bench::mark(
+f1(),
+f2()
+)
+result
+```
+zorro
+```
+# content of tthe chunck above
+
+<S3: bench_expr>	40.9s	40.9s	0.02447838	23.7GB	
+<S3: bench_expr>	27.9s	27.9s	0.03588934	59.1MB	
+2 rows | 1-5 of 13 columns
+
+<S3: bench_expr>	1.6m	1.6m	0.01041066	47.2GB	
+<S3: bench_expr>	1.14m	1.14m	0.01466900	115.6MB	
+
+entire fligths B=700
+<S3: bench_expr>	6.48m	6.48m	0.002572499	112GB	
+<S3: bench_expr>	3.79m	3.79m	0.004402274	209MB
+```
+
+```
+{r echo=TRUE}
+fit <- blblm(mpg ~ wt * hp, data = mtcars, m = 3, B = 100)
+coef(fit)
+fit2 <- blblm1(mpg ~ wt * hp, data = mtcars, m = 3, B = 100)
+coef(fit2)
+fit <- blblm(mpg ~ wt * hp, data = mtcars, m = 4, B = 100, ifgeneral=TRUE)
+coef(fit)
+fit <- blblm(mpg ~ wt * hp, data = mtcars, m = 5, B = 100, ifgeneral=TRUE, family='quasi')
+coef(fit)
+#fit2 <- blbglm(mpg ~ wt * hp, data = mtcars, m = 3, B = 100)
+#fit2$coef
+#coef(fit2)
+```

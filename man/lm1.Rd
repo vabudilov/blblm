@@ -4,7 +4,18 @@
 \alias{lm1}
 \title{estimate the regression estimates based on given the number of repetitions}
 \usage{
-lm1(formula, data, freqs)
+lm1(formula, data, freqs, ifgeneral, family)
+}
+\arguments{
+\item{formula}{formula to be used}
+
+\item{data}{data to be used}
+
+\item{freqs}{weigths}
+
+\item{ifgeneral}{if GML to be used (default is FALSE)}
+
+\item{family}{famile for GML model}
 }
 \description{
 estimate the regression estimates based on given the number of repetitions

@@ -4,7 +4,20 @@
 \alias{lm_each_subsample}
 \title{compute the estimates}
 \usage{
-lm_each_subsample(formula, data, n, B)
+lm_each_subsample(formula, data, n, B, ifgeneral, family)
+}
+\arguments{
+\item{formula}{formula to use}
+
+\item{data}{data t0 use}
+
+\item{n}{number to pass (splits)}
+
+\item{B}{boostrap "depth"}
+
+\item{ifgeneral}{if GML to be used (defualt is FALSE)}
+
+\item{family}{if GML is used, family could be splecified}
 }
 \description{
 compute the estimates

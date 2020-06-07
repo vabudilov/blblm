@@ -4,7 +4,18 @@
 \alias{lm_each_boot}
 \title{compute the regression estimates for a blb dataset}
 \usage{
-lm_each_boot(formula, data, n)
+lm_each_boot(formula, data, n, ifgeneral, family)
+}
+\arguments{
+\item{formula}{formula to be used}
+
+\item{data}{data to be used}
+
+\item{n}{parameter of splits}
+
+\item{ifgeneral}{if GML to be used (defulat is FALSE)}
+
+\item{family}{family for GML}
 }
 \description{
 compute the regression estimates for a blb dataset

@@ -7,8 +7,9 @@
 
 ``` r
 library(blblm)
+set.seed(3)
 fit <- blblm(mpg ~ wt * hp, data = mtcars, m = 3, B = 100)
-coef(fit)
+res<-coef(fit)
 #> (Intercept)          wt          hp       wt:hp 
 #> 48.88428523 -7.88702986 -0.11576659  0.02600976
 confint(fit, c("wt", "hp"))
