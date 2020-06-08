@@ -56,16 +56,11 @@ blblm(formula, data, m = 10, B = 5000, ifgeneral=FALSE,family = "gaussian", para
 Logical ifgeneral parameter tells if we need to use generalized linear model, the default value is FALSE. If the generalized linear model required, we need to change ifgeneral to TRUE. The default family is ste to be "gaussian". When parallelization is required, the value of the parameter *parallel* has to be set to TRUE.
 
 #### Test cases
-blablabla
-
-balbla
+Tests have been created. Check test-fit.R
 
 #### Documentation
 
-blablabla
-
-balbla
-
+Documentation has been elaborated.
 
 ### Results and Discussion
 
@@ -103,14 +98,6 @@ For six workers, m=4, and B=1000, the results are
 ##   <bch:expr> <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
 ## 1 f1()          4.76m    4.76m   0.00350     159GB  4.91   
 ## 2 f2()          2.75m    2.75m   0.00606     213MB  0.00606
-```
-zorro
-```
-# content of the chunk above
-
-entire fligths B=700
-<S3: bench_expr>	6.48m	6.48m	0.002572499	112GB	
-<S3: bench_expr>	3.79m	3.79m	0.004402274	209MB
 ```
 ## Some examples of usage
 
