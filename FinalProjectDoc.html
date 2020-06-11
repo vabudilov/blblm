@@ -364,7 +364,7 @@ summary {
 
 <h1 class="title toc-ignore">STA141C Spring 2020 Final project</h1>
 <h4 class="author">V. Budilov</h4>
-<h4 class="date">6/5/2020</h4>
+<h4 class="date">6/10/2020</h4>
 
 </div>
 
@@ -447,15 +447,15 @@ result</code></pre>
 <pre class="r"><code>fit &lt;- blblm(mpg ~ wt * hp, data = mtcars, m = 3, B = 100)
 coef(fit)</code></pre>
 <pre><code>## (Intercept)          wt          hp       wt:hp 
-## 50.55178735 -8.41471755 -0.13120422  0.03078998</code></pre>
+## 46.39310071 -6.99571918 -0.10571262  0.02235438</code></pre>
 </div>
 <div id="parallelization-1" class="section level3">
 <h3>Parallelization</h3>
 <p>Usage with simple linear model, and prallelization</p>
 <pre class="r"><code>fit2 &lt;- blblm(mpg ~ wt * hp, data = mtcars, m = 3, B = 100, parallel=TRUE)
 coef(fit2)</code></pre>
-<pre><code>##  (Intercept)           wt           hp        wt:hp 
-## 41.152233281 -5.477985610 -0.046195275  0.005339449</code></pre>
+<pre><code>## (Intercept)          wt          hp       wt:hp 
+## 50.04203091 -7.93519662 -0.12912013  0.02830497</code></pre>
 </div>
 <div id="generalized-linear-model-1" class="section level3">
 <h3>Generalized linear model</h3>
@@ -463,15 +463,15 @@ coef(fit2)</code></pre>
 <pre class="r"><code>fit &lt;- blblm(mpg ~ wt * hp, data = mtcars, m = 4, B = 100, ifgeneral=TRUE)
 coef(fit)</code></pre>
 <pre><code>## (Intercept)          wt          hp       wt:hp 
-## 46.62161874 -5.93388133 -0.14437097  0.02567333</code></pre>
+## 46.26531179 -6.98452390 -0.09906811  0.02063779</code></pre>
 </div>
 <div id="generalized-linear-model-with-parallelization" class="section level3">
 <h3>Generalized linear model with parallelization</h3>
 <p>Usage with generalized linear model with parallelziation</p>
 <pre class="r"><code>fit &lt;- blblm(mpg ~ wt * hp, data = mtcars, m = 5, B = 100, ifgeneral=TRUE, family=&#39;quasi&#39;, parallel=TRUE)
 coef(fit)</code></pre>
-<pre><code>## (Intercept)          wt          hp       wt:hp 
-## 27.84406426 -1.25993067  0.02760799          NA</code></pre>
+<pre><code>##  (Intercept)           wt           hp        wt:hp 
+##  62.67768739 -13.48362922  -0.20264272   0.05979274</code></pre>
 <pre class="r"><code>#fit2 &lt;- blbglm(mpg ~ wt * hp, data = mtcars, m = 3, B = 100)
 #fit2$coef
 #coef(fit2)</code></pre>

@@ -1,10 +1,10 @@
 ---
 title: "STA141C Spring 2020 Final project"
 author: "V. Budilov"
-date: "6/5/2020"
+date: "6/10/2020"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
