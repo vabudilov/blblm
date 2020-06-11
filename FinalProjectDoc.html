@@ -447,7 +447,7 @@ result</code></pre>
 <pre class="r"><code>fit &lt;- blblm(mpg ~ wt * hp, data = mtcars, m = 3, B = 100)
 coef(fit)</code></pre>
 <pre><code>## (Intercept)          wt          hp       wt:hp 
-## 46.39310071 -6.99571918 -0.10571262  0.02235438</code></pre>
+## 49.09136106 -7.73972493 -0.12488876  0.02746279</code></pre>
 </div>
 <div id="parallelization-1" class="section level3">
 <h3>Parallelization</h3>
@@ -455,7 +455,7 @@ coef(fit)</code></pre>
 <pre class="r"><code>fit2 &lt;- blblm(mpg ~ wt * hp, data = mtcars, m = 3, B = 100, parallel=TRUE)
 coef(fit2)</code></pre>
 <pre><code>## (Intercept)          wt          hp       wt:hp 
-## 50.04203091 -7.93519662 -0.12912013  0.02830497</code></pre>
+## 52.35217709 -8.69442958 -0.14290564  0.03267529</code></pre>
 </div>
 <div id="generalized-linear-model-1" class="section level3">
 <h3>Generalized linear model</h3>
@@ -463,15 +463,15 @@ coef(fit2)</code></pre>
 <pre class="r"><code>fit &lt;- blblm(mpg ~ wt * hp, data = mtcars, m = 4, B = 100, ifgeneral=TRUE)
 coef(fit)</code></pre>
 <pre><code>## (Intercept)          wt          hp       wt:hp 
-## 46.26531179 -6.98452390 -0.09906811  0.02063779</code></pre>
+## 53.60517877 -7.98062421 -0.20158611  0.04029566</code></pre>
 </div>
 <div id="generalized-linear-model-with-parallelization" class="section level3">
 <h3>Generalized linear model with parallelization</h3>
 <p>Usage with generalized linear model with parallelziation</p>
 <pre class="r"><code>fit &lt;- blblm(mpg ~ wt * hp, data = mtcars, m = 5, B = 100, ifgeneral=TRUE, family=&#39;quasi&#39;, parallel=TRUE)
 coef(fit)</code></pre>
-<pre><code>##  (Intercept)           wt           hp        wt:hp 
-##  62.67768739 -13.48362922  -0.20264272   0.05979274</code></pre>
+<pre><code>## (Intercept)          wt          hp       wt:hp 
+##  46.9883213  -6.8319081  -0.1384183          NA</code></pre>
 <pre class="r"><code>#fit2 &lt;- blbglm(mpg ~ wt * hp, data = mtcars, m = 3, B = 100)
 #fit2$coef
 #coef(fit2)</code></pre>

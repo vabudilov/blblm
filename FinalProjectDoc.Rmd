@@ -3,8 +3,8 @@ title: "STA141C Spring 2020 Final project"
 author: "V. Budilov"
 date: "6/10/2020"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
